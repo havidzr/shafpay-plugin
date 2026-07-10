@@ -202,26 +202,35 @@ class Shafpay_Dashboard {
                     <p class="shafpay-desc" style="margin-bottom: 15px;">Pencairan dana otomatis dikirim langsung ke rekening bank penampung resmi lembaga Anda.</p>
                     
                     <?php if ( ! empty( $bank_details ) ) : ?>
-                        <div class="shafpay-bank-card">
-                            <div class="shafpay-bank-card-holder"><?php echo esc_html( $bank_details['account_holder_name'] ); ?></div>
-                            <div class="shafpay-bank-card-info">
-                                <div class="shafpay-bank-card-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
+                        <?php
+                        $acc_num = isset($bank_details['account_number']) ? $bank_details['account_number'] : '';
+                        $formatted_number = str_replace( '••••', ' &nbsp;••••&nbsp; ••••&nbsp; ', $acc_num );
+                        ?>
+                        <div class="card-visual">
+                            <div class="card-top">
+                                <div class="chip"></div>
+                                <div class="card-badge">
+                                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" stroke="white" stroke-width="1.8"/></svg>
+                                    Terverifikasi
                                 </div>
-                                <div class="shafpay-bank-card-text">
-                                    <div class="shafpay-bank-card-number"><?php echo esc_html( $bank_details['bank_code'] ); ?> — <?php echo esc_html( $bank_details['account_number'] ); ?></div>
-                                    <div class="shafpay-bank-card-sub">Rekening Penerima Resmi</div>
+                            </div>
+                            <div class="card-number"><?php echo $formatted_number; ?></div>
+                            <div class="card-bottom">
+                                <div>
+                                    <div class="card-label">Pemegang Rekening</div>
+                                    <div class="card-name"><?php echo esc_html( $bank_details['account_holder_name'] ); ?></div>
                                 </div>
+                                <div class="card-bank"><?php echo esc_html( $bank_details['bank_code'] ); ?></div>
                             </div>
                         </div>
                     <?php else : ?>
                         <p style="color: #94a3b8; font-style: italic; font-size: 13px;">Informasi rekening bank belum diatur. Silakan berkoordinasi dengan developer pusat.</p>
                     <?php endif; ?>
                     
-                    <hr class="shafpay-divider" />
-                    <p style="font-size: 11px; color: #94a3b8; line-height: 1.4; margin: 0;">
-                        *Perubahan rekening bank tujuan tidak dapat dilakukan di sini demi keamanan dana. Ajukan permohonan ke admin pusat untuk melakukan koreksi.
-                    </p>
+                    <div class="card-footnote">
+                        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="16" r="0.9" fill="currentColor"/></svg>
+                        <span>Perubahan rekening tujuan tidak dapat dilakukan di sini demi keamanan dana. Ajukan permohonan ke <a href="https://shafpay.tsirwah.com" target="_blank">admin pusat</a> untuk melakukan koreksi.</span>
+                    </div>
                 </div>
 
                 <!-- Form Pengajuan Pencairan -->

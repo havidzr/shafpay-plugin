@@ -1,0 +1,266 @@
+.shafpay-dashboard {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: #1e293b;
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+.shafpay-dashboard * {
+  box-sizing: border-box;
+}
+
+/* Header & Intro */
+.shafpay-dash-header {
+  margin-bottom: 24px;
+}
+
+.shafpay-dash-header h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.5px;
+}
+
+.shafpay-dash-header p {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Alert System */
+.shafpay-alert {
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shafpay-alert.shafpay-success {
+  background: #f0fdf4;
+  border: 1px solid #bcf0da;
+  color: #166534;
+}
+
+.shafpay-alert.shafpay-danger {
+  background: #fdf2f2;
+  border: 1px solid #fbd5d5;
+  color: #9b1c1c;
+}
+
+.shafpay-alert.shafpay-warning {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #78350f;
+}
+
+/* Grid layout */
+.shafpay-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.shafpay-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* Premium Stat Cards */
+.shafpay-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shafpay-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+.shafpay-stat-card .shafpay-icon-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.shafpay-stat-card .shafpay-icon-wrapper svg {
+  width: 22px;
+  height: 22px;
+}
+
+.shafpay-stat-card .shafpay-icon-wrapper.blue { background: #eff6ff; color: #1c64f2; }
+.shafpay-stat-card .shafpay-icon-wrapper.amber { background: #fffbeb; color: #d97706; }
+.shafpay-stat-card .shafpay-icon-wrapper.green { background: #f0fdf4; color: #16a34a; }
+
+.shafpay-stat-card .shafpay-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.shafpay-stat-card .shafpay-value {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+  font-family: 'Plus Jakarta Sans', monospace;
+  margin-bottom: 6px;
+}
+
+.shafpay-stat-card .shafpay-sub {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* Sections & Forms */
+.shafpay-section-card h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+
+.shafpay-section-card .shafpay-desc {
+  font-size: 12.5px;
+  color: #64748b;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+.shafpay-divider {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 20px 0;
+}
+
+/* Bank details table */
+.shafpay-bank-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.shafpay-bank-table td {
+  padding: 8px 0;
+  font-size: 13px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.shafpay-bank-table tr:last-child td {
+  border-bottom: none;
+}
+
+.shafpay-bank-table td.shafpay-label {
+  font-weight: 600;
+  color: #64748b;
+  width: 110px;
+}
+
+.shafpay-bank-table td.shafpay-val {
+  font-weight: 700;
+  color: #1e293b;
+  text-align: right;
+}
+
+/* Inputs & Form Fields */
+.shafpay-field-group {
+  margin-bottom: 18px;
+}
+
+.shafpay-field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.shafpay-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 14.5px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.shafpay-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.shafpay-input-description {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* Buttons */
+.shafpay-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 20px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.shafpay-btn-primary {
+  background: #1c64f2;
+  color: #ffffff;
+}
+
+.shafpay-btn-primary:hover {
+  background: #1a56db;
+}
+
+.shafpay-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.shafpay-btn:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive adjust */
+@media (max-width: 640px) {
+  .shafpay-dashboard {
+    padding: 0 10px;
+  }
+  .shafpay-card {
+    padding: 16px 20px;
+  }
+  .shafpay-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}

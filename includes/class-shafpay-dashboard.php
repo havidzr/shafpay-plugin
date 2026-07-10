@@ -135,7 +135,7 @@ class Shafpay_Dashboard {
             <div class="shafpay-dash-header" style="display: flex; align-items: center; gap: 14px; margin-bottom: 24px;">
                 <img src="https://shafpay.tsirwah.com/logo.png" alt="Shafpay Logo" style="width: 44px; height: 44px; object-fit: contain; flex-shrink: 0;" />
                 <div>
-                    <h2 style="display: flex; align-items: center; gap: 8px;">Portal Keuangan Lembaga <span style="font-size: 12px; font-weight: 600; color: #1c64f2; background: #eff6ff; padding: 2px 8px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">by Shafpay</span></h2>
+                    <h2 style="font-size: 24px; font-weight: 800; color: #0f172a; margin: 0 0 4px 0; letter-spacing: -0.5px;">Portal Keuangan Lembaga</h2>
                     <p>Pantau laporan saldo virtual bersih dan ajukan pencairan dana otomatis secara langsung.</p>
                 </div>
             </div>
@@ -196,24 +196,22 @@ class Shafpay_Dashboard {
 
             <!-- Grid 2 Kolom - Rekening & Form -->
             <div class="shafpay-grid-2">
-                <!-- Info Bank Terdaftar (Redesigned Borderless Card List) -->
+                <!-- Info Bank Terdaftar (Redesigned Banking Card Style) -->
                 <div class="shafpay-card shafpay-section-card">
                     <h3>🏦 Rekening Bank Tujuan Transfer</h3>
                     <p class="shafpay-desc" style="margin-bottom: 15px;">Pencairan dana otomatis dikirim langsung ke rekening bank penampung resmi lembaga Anda.</p>
                     
                     <?php if ( ! empty( $bank_details ) ) : ?>
-                        <div class="shafpay-bank-details">
-                            <div class="shafpay-bank-row">
-                                <span class="shafpay-bank-label">Nama Bank</span>
-                                <strong class="shafpay-bank-value"><?php echo esc_html( $bank_details['bank_code'] ); ?></strong>
-                            </div>
-                            <div class="shafpay-bank-row">
-                                <span class="shafpay-bank-label">No. Rekening</span>
-                                <strong class="shafpay-bank-value" style="font-family: monospace; letter-spacing: 0.5px;"><?php echo esc_html( $bank_details['account_number'] ); ?></strong>
-                            </div>
-                            <div class="shafpay-bank-row">
-                                <span class="shafpay-bank-label">Atas Nama</span>
-                                <strong class="shafpay-bank-value"><?php echo esc_html( $bank_details['account_holder_name'] ); ?></strong>
+                        <div class="shafpay-bank-card">
+                            <div class="shafpay-bank-card-holder"><?php echo esc_html( $bank_details['account_holder_name'] ); ?></div>
+                            <div class="shafpay-bank-card-info">
+                                <div class="shafpay-bank-card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
+                                </div>
+                                <div class="shafpay-bank-card-text">
+                                    <div class="shafpay-bank-card-number"><?php echo esc_html( $bank_details['bank_code'] ); ?> — <?php echo esc_html( $bank_details['account_number'] ); ?></div>
+                                    <div class="shafpay-bank-card-sub">Rekening Penerima Resmi</div>
+                                </div>
                             </div>
                         </div>
                     <?php else : ?>

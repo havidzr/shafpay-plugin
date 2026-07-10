@@ -152,33 +152,44 @@
   margin: 20px 0;
 }
 
-/* Bank details table */
-.shafpay-bank-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+/* Bank details list card */
+.shafpay-bank-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+  background: #f8fafc;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e1;
 }
 
-.shafpay-bank-table td {
-  padding: 8px 0;
-  font-size: 13px;
-  border-bottom: 1px solid #f1f5f9;
+.shafpay-bank-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13.5px;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 10px;
 }
 
-.shafpay-bank-table tr:last-child td {
+.shafpay-bank-row:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 
-.shafpay-bank-table td.shafpay-label {
-  font-weight: 600;
+.shafpay-bank-label {
   color: #64748b;
-  width: 110px;
+  font-weight: 600;
 }
 
-.shafpay-bank-table td.shafpay-val {
-  font-weight: 700;
-  color: #1e293b;
-  text-align: right;
+.shafpay-bank-value {
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.shafpay-bank-value.font-mono {
+  font-family: monospace;
 }
 
 /* Inputs & Form Fields */

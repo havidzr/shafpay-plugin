@@ -131,10 +131,13 @@ class Shafpay_Dashboard {
         ob_start();
         ?>
         <div class="shafpay-dashboard">
-            <!-- Header -->
-            <div class="shafpay-dash-header">
-                <h2>Portal Keuangan Lembaga</h2>
-                <p>Pantau laporan saldo virtual bersih dan ajukan pencairan dana otomatis.</p>
+            <!-- Header dengan Logo Branded -->
+            <div class="shafpay-dash-header" style="display: flex; align-items: center; gap: 14px; margin-bottom: 24px;">
+                <img src="https://shafpay.tsirwah.com/logo.png" alt="Shafpay Logo" style="width: 44px; height: 44px; object-fit: contain; flex-shrink: 0;" />
+                <div>
+                    <h2 style="display: flex; align-items: center; gap: 8px;">Portal Keuangan Lembaga <span style="font-size: 12px; font-weight: 600; color: #1c64f2; background: #eff6ff; padding: 2px 8px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">by Shafpay</span></h2>
+                    <p>Pantau laporan saldo virtual bersih dan ajukan pencairan dana otomatis secara langsung.</p>
+                </div>
             </div>
 
             <!-- Messages Box -->
@@ -185,28 +188,34 @@ class Shafpay_Dashboard {
                 </div>
             </div>
 
+            <!-- Panduan/Instruksi Cek Ledger Audit -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 20px; text-align: center; margin-bottom: 24px; font-size: 13px; color: #475569;">
+                📊 Ingin melihat buku kas atau laporan mutasi audit lengkap? Kunjungi 
+                <a href="https://shafpay.tsirwah.com" target="_blank" style="color: #1c64f2; font-weight: 700; text-decoration: none;">Portal Hub Shafpay &rarr;</a>
+            </div>
+
             <!-- Grid 2 Kolom - Rekening & Form -->
             <div class="shafpay-grid-2">
-                <!-- Info Bank Terdaftar -->
+                <!-- Info Bank Terdaftar (Redesigned Borderless Card List) -->
                 <div class="shafpay-card shafpay-section-card">
                     <h3>🏦 Rekening Bank Tujuan Transfer</h3>
-                    <p class="shafpay-desc">Pencairan dana otomatis dikirim langsung ke rekening bank penampung resmi lembaga Anda.</p>
+                    <p class="shafpay-desc" style="margin-bottom: 15px;">Pencairan dana otomatis dikirim langsung ke rekening bank penampung resmi lembaga Anda.</p>
                     
                     <?php if ( ! empty( $bank_details ) ) : ?>
-                        <table class="shafpay-bank-table">
-                            <tr>
-                                <td class="shafpay-label">Nama Bank:</td>
-                                <td class="shafpay-val"><?php echo esc_html( $bank_details['bank_code'] ); ?></td>
-                            </tr>
-                            <tr>
-                                <td class="shafpay-label">No. Rekening:</td>
-                                <td class="shafpay-val" style="font-family: monospace; letter-spacing: 0.5px;"><?php echo esc_html( $bank_details['account_number'] ); ?></td>
-                            </tr>
-                            <tr>
-                                <td class="shafpay-label">Atas Nama:</td>
-                                <td class="shafpay-val"><?php echo esc_html( $bank_details['account_holder_name'] ); ?></td>
-                            </tr>
-                        </table>
+                        <div class="shafpay-bank-details">
+                            <div class="shafpay-bank-row">
+                                <span class="shafpay-bank-label">Nama Bank</span>
+                                <strong class="shafpay-bank-value"><?php echo esc_html( $bank_details['bank_code'] ); ?></strong>
+                            </div>
+                            <div class="shafpay-bank-row">
+                                <span class="shafpay-bank-label">No. Rekening</span>
+                                <strong class="shafpay-bank-value" style="font-family: monospace; letter-spacing: 0.5px;"><?php echo esc_html( $bank_details['account_number'] ); ?></strong>
+                            </div>
+                            <div class="shafpay-bank-row">
+                                <span class="shafpay-bank-label">Atas Nama</span>
+                                <strong class="shafpay-bank-value"><?php echo esc_html( $bank_details['account_holder_name'] ); ?></strong>
+                            </div>
+                        </div>
                     <?php else : ?>
                         <p style="color: #94a3b8; font-style: italic; font-size: 13px;">Informasi rekening bank belum diatur. Silakan berkoordinasi dengan developer pusat.</p>
                     <?php endif; ?>
@@ -236,7 +245,6 @@ class Shafpay_Dashboard {
                                 min="100000" 
                                 max="<?php echo esc_attr( $balance_withdrawable ); ?>"
                                 required
-                                <?php echo ( $balance_withdrawable < 100000 ) ? 'disabled' : ''; ?>
                             />
                             <p class="shafpay-input-description">Batas penarikan minimum Rp100.000. Biaya admin kirim dana flat Rp5.000 otomatis dipotong dari saldo penarikan Anda.</p>
                         </div>

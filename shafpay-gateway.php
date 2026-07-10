@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Shafpay Private Payment Gateway
  * Description: Integrasi pembayaran QRIS otomatis terpusat melalui shafpay.tsirwah.com untuk WooCommerce dengan shortcode dashboard.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Shafwah Developer Team
  * Author URI: https://shafpay.tsirwah.com
  * Text Domain: shafpay-gateway
@@ -66,7 +66,7 @@ function shafpay_check_for_plugin_update( $transient ) {
     }
 
     $plugin_slug = 'shafpay-plugin/shafpay-gateway.php';
-    $current_version = '1.1.0';
+    $current_version = '1.1.1';
 
     $response = wp_remote_get( 'https://api.github.com/repos/havidzr/shafpay-plugin/releases/latest', array(
         'headers' => array(
